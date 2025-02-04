@@ -2,7 +2,7 @@
 {
     public class TipoDeTarefa
     {
-        public int TipoTarefaId { get; set; }
-        public string Tipo { get; set; }
+        public int TipoDeTarefaId { get; set; }
+        public string Tipo { get; set; } = string.Empty;
     }
 }
