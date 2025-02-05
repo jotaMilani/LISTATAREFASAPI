@@ -3,6 +3,15 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//adcionar e configurar o CORS (Cross-Origin Resource Sharing) para permitir que a API seja acessada por outros domínios.
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 // Add services to the container.
 builder.Services.AddDbContext<ListaTarefasContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
